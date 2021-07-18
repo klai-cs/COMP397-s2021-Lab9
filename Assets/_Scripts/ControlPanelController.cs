@@ -107,6 +107,7 @@ public class ControlPanelController : MonoBehaviour
     {
         
         sceneData.playerPosition = player.transform.position;
+        sceneData.playerRotation = player.transform.rotation;
         sceneData.playerHealth = player.health;
     }
 
@@ -114,6 +115,7 @@ public class ControlPanelController : MonoBehaviour
     {
         player.controller.enabled = false;
         player.transform.position = sceneData.playerPosition;
+        player.transform.rotation= sceneData.playerRotation;
         player.controller.enabled = true;
         player.health = sceneData.playerHealth;
         player.healthBar.SetHealth(sceneData.playerHealth);
